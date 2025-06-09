@@ -1,4 +1,5 @@
-const data = [
+
+[
     {
       "id": 1,
       "question": "What's the difference between GET and POST requests?",
@@ -248,7 +249,10 @@ const data = [
       "id": 50,
       "question": "How do you stay updated with the latest technology trends?",
       "response": "Staying updated involves following industry news, participating in developer communities, attending conferences and workshops, taking online courses, reading technical blogs and publications, and experimenting with new technologies and tools."
-    }
+    },
+    {
+        "id": 51,
+        "question": "Hi",
+        "response": "Hi There. How can I assist you today?"
+      }
   ]
-  
-  export default data;
