@@ -9,6 +9,8 @@ import SaveAsIcon from '@mui/icons-material/SaveAs';
 import React, { useEffect, useState, useRef } from 'react';
 import stringSimilarity from 'string-similarity';
 import Feedbackform from './components/Feedbackform';
+import { Link } from 'react-router-dom';
+
 
 function App() {
 
@@ -226,7 +228,9 @@ function App() {
 
           {
             showPastConvo ?
-              (<Button
+              (
+              <Link to="/">
+              <Button
 
                 onClick={() => setShowPastConvo(false)}
 
@@ -244,8 +248,11 @@ function App() {
                 variant="contained"
               >
                 Back to Chat
-              </Button>)
+              </Button>
+              </Link>
+              )
               : (
+                <Link to="/history">
                 <Button
 
                   onClick={() => setShowPastConvo(true)}
@@ -265,6 +272,7 @@ function App() {
                 >
                   Past Conversations
                 </Button>
+                </Link>
               )
           }
         </Grid>
@@ -275,7 +283,9 @@ function App() {
             <Grid container sx={{ height: '100%' }}>
               {/* App Title  */}
               <Grid size={12} sx={{ height: '10%' }}>
+                <header>
                 <Typography variant='h1' sx={{ color: 'primary.main', fontSize: '2em', fontWeight: 'bold', marginLeft: '0.5em', marginTop: '0.2em' }}>Bot AI</Typography>
+                </header>
               </Grid>
               {fqstatus &&
                 (<Grid size={12} sx={{ height: '80%', display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }}>
@@ -529,6 +539,7 @@ function App() {
                     <TextField
                       value={userQuerry}
                       onChange={(e) => setUserQuerry(e.target.value)}
+                      placeholder="Message Bot AI…" 
                       sx={{
                         backgroundColor: '#fff',
                         '& .MuiInputBase-root': {
